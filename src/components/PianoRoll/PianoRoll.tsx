@@ -38,7 +38,7 @@ const PianoRoll = () => {
     }
 
     return (
-        <>
+        <div className="piano-roll">
             <div className="row">
                 {sequence.map((column, columnIndex) => {
                     return (
@@ -69,7 +69,7 @@ const PianoRoll = () => {
                     );
                 })}
             </div>
-        </>
+        </div>
     );
 };
 

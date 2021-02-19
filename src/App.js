@@ -1,10 +1,13 @@
+import * as Tone from 'tone';
+import './App.css';
 import { useSelector } from 'react-redux'
-import './App.scss';
-import Body from "../Body/Body";
-import PianoRoll from '../PianoRoll'
-import Transport from "../Transport/Transport";
 
-const App = () => {
+
+import PianoRoll from './Components/PianoRoll'
+import Transport from "./Components/Transport/Transport";
+import React from "react";
+
+function App() {
   const stateObject = useSelector(state => state)
   console.log("test root state Object", stateObject)
 
@@ -12,7 +15,6 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <Transport onPlay={() => {}} />
-        <Body/>
         <PianoRoll />
       </header>
     </div>

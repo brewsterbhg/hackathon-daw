@@ -5,7 +5,7 @@ import Channel from "../Channel/Channel";
 import addChannel from "../../state/actions/index"
 
 const Body =() => {
-  const channels = useSelector(state => state.player.channels)
+  const channels = useSelector(state => state.player.channels) || [];
   // const channels = [];
   //  const stateObject = useSelector(state => state)
   //  console.log("test root state Object", stateObject)
