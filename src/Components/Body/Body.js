@@ -13,11 +13,12 @@ const Body =() => {
     newChannels.push({ name: "test" })
     dispatch(appendChannel(newChannels));
   }
+  
   return (
     <div className="daw_body">
       <button className="button" onClick={() => {addChannel() }}>+</button>
       {channels.map((channel, index) => {
-        return (      <Channel key={index} channel={channel}/>)
+        return (<Channel key={index} index={ index} channel={channel}/>)
       })}
     </div>
   );
