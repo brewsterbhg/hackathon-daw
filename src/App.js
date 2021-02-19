@@ -3,8 +3,8 @@ import './App.css';
 import { useSelector } from 'react-redux'
 
 
-import PianoRoll from './Components/PianoRoll'
-import Transport from "./Components/Transport/Transport";
+import PianoRoll from './components/PianoRoll'
+import Transport from "./components/Transport/Transport";
 import React from "react";
 
 function App() {
