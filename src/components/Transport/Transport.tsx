@@ -3,6 +3,7 @@ import {ReactComponent as PlayButton} from '../../assets/play.svg';
 import {ReactComponent as PauseButton} from "../../assets/pause.svg";
 import {ReactComponent as StopButton} from "../../assets/stop.svg";
 import './transport.css'
+import {Control, Reset, Timer} from "../Timer/Timer";
 
 export interface TransportPros {
   onPlay: () => void;
@@ -30,6 +31,13 @@ export default function Transport({onPlay, onPause, onStop, currentBPM = '120'}:
         {currentBPM}
       </span>
      </div>
+        <Timer time={100}  />
+        {/*<Control*/}
+        {/*    paused={false}*/}
+        {/*    start={null}*/}
+        {/*    stop={null}*/}
+        {/*/>*/}
+        {/*<Reset  onClickReset={this.reset}/>*/}
     </div>
   );
 }
