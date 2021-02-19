@@ -1,18 +1,17 @@
 .transport-button {
-    display: inline-flex;
-    margin: 8px;
+  display: inline-flex;
+  margin: 8px;
 }
 .transport-container {
-    background: grey;
-    display: flex;
-    margin-bottom: 8px;
+  background: grey;
+  display: flex;
 }
 .transport-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 .transport-margins {
-    margin: 8px;
+  margin: 8px;
 }
