@@ -22,7 +22,7 @@ export const initialState =  {
 };
 
 
-const playerReducer = (state = initialState, action) => {
+const sequenceReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_SEQUENCE :
             return {...state, sequence: action.payload}
@@ -31,4 +31,4 @@ const playerReducer = (state = initialState, action) => {
     }
 }
 
-export default playerReducer
+export default sequenceReducer

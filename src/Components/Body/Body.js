@@ -5,15 +5,12 @@ import Channel from "../Channel/Channel";
 import addChannel from "../../state/actions/index"
 
 const Body =() => {
-  const channels = useSelector(state => state.player.channels) || [];
-  // const channels = [];
-  //  const stateObject = useSelector(state => state)
-  //  console.log("test root state Object", stateObject)
+  const channels = useSelector(state => state.channel.channels)
+  const dispatch = useDispatch()
 
-  const dispatch = useDispatch();
   const addChannel = () => {
-    const newChannel = { name: "New Channel"}
-    addChannel(newChannel)
+    let newChannel = { name: "New Channel"}
+    dispatch(addChannel(newChannel));
   }
   return (
     <div className="daw_body">

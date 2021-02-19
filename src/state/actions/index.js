@@ -15,9 +15,11 @@ export const addChannel = channel => ({
 export const setPlay = () => ({
     type: SET_PLAY,
 })
+
 export const setPause = () => ({
     type: SET_PAUSE,
 })
+
 export const setSequence = (sequence) => ({
     type: SET_SEQUENCE,
     payload: sequence
