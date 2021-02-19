@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+}
+
+.note {
+  width: 75px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid black;
+  margin-top: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.half-step {
+  background-color: black;
+  color: white;
+}
+
+.step {
+  width: 50px;
+}

@@ -1,27 +1,27 @@
-import logo from './logo.svg';
+import * as Tone from 'tone';
 import './App.css';
 import { useSelector } from 'react-redux'
 
 
+import PianoRoll from './components/PianoRoll'
+
 function App() {
   const stateObject = useSelector(state => state)
   console.log("test root state Object", stateObject)
+  async function startPlay() {
+    await Tone.start();
+    await Tone.Transport.start();
+
+    if (Tone.context.state !== 'running') {
+      Tone.context.resume();
+    }
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={startPlay}>Start</button>
+        <PianoRoll />
       </header>
     </div>
   );
