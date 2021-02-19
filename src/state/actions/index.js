@@ -6,9 +6,9 @@ export const addSong = note => ({
     playload:note
 })
 
-export const addChannel = channel => ({
+export const addChannel = channels => ({
     type: ADD_CHANNEL,
-    playload:channel
+    payload:channels
 })
 
 

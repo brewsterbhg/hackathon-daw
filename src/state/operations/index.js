@@ -10,8 +10,8 @@ const asyncPlayBackDummy = () => async dispatch => {
 
 };
 
-const appendChannel = () => async dispatch => {
-    dispatch(addChannel())
+const appendChannel = (newChannels) => async dispatch => {
+    dispatch(addChannel(newChannels))
 };
 
 
