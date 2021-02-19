@@ -2,24 +2,23 @@ import { useSelector, useDispatch } from "react-redux";
 import "./Body.scss";
 import Channel from "../Channel/Channel";
 
-import addChannel from "../../state/actions/index"
+import {appendChannel} from "../../state/operations"
 
 const Body =() => {
-  const channels = useSelector(state => state.player.channels) || [];
-  // const channels = [];
-  //  const stateObject = useSelector(state => state)
-  //  console.log("test root state Object", stateObject)
+  const channels = useSelector(state => state.channel.channels)
+  const dispatch = useDispatch()
 
-  const dispatch = useDispatch();
   const addChannel = () => {
-    const newChannel = { name: "New Channel"}
-    addChannel(newChannel)
+    let newChannels = [...channels];
+    newChannels.push({ name: "test" })
+    dispatch(appendChannel(newChannels));
   }
+  
   return (
     <div className="daw_body">
-      <button className="button" onClick={(e) => {addChannel() }}>+</button>
+      <button className="button" onClick={() => {addChannel() }}>+</button>
       {channels.map((channel, index) => {
-        return (      <Channel key={index} channel={channel}/>)
+        return (<Channel key={index} index={ index} channel={channel}/>)
       })}
     </div>
   );

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import './App.scss';
 import Body from "../Body/Body";
-import PianoRoll from '../PianoRoll'
+// import PianoRoll from '../PianoRoll/PianoRoll'
 import Transport from "../Transport/Transport";
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       <header className="App-header">
         <Transport onPlay={() => {}} />
         <Body/>
-        <PianoRoll />
+        {/* <PianoRoll /> */}
       </header>
     </div>
   );
