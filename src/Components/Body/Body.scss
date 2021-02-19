@@ -1,0 +1,17 @@
+.daw_body {
+  width: 100vw;
+  height: 40vh;
+  background-color: silver;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  overflow: scroll;
+}
+
+.button {
+  width: 5vw;
+  padding: 1em;
+  margin: 1em;
+  font-weight: bold;
+}
