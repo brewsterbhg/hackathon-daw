@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 
 
 import PianoRoll from './components/PianoRoll'
+import Transport from "./components/Transport/Transport";
+import React from "react";
 
 function App() {
   const stateObject = useSelector(state => state)
@@ -20,7 +22,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={startPlay}>Start</button>
+        {/*<button onClick={startPlay}>Start</button>*/}
+        <Transport onPlay={startPlay} />
         <PianoRoll />
       </header>
     </div>
