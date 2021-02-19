@@ -1,0 +1,21 @@
+.body{
+    width: 100vw;
+    height: 50vh;
+    background-color: grey;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    color: white;
+
+    .body__controls{
+        width: 30%;
+        height: auto
+    }
+
+    .body__channels{
+        width: 65%;
+        height: auto;
+        background-color: white;
+        border: 1px solid black;
+    }
+}
