@@ -11,7 +11,13 @@ const asyncPlayBackDummy = () => async dispatch => {
 };
 
 
+const setIsPlaying = () => async dispatch => {
+    dispatch(setIsPlaying())
+};
+
+
 
 export {
     asyncPlayBackDummy,
+    setIsPlaying
 };

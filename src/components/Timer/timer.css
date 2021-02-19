@@ -1,0 +1,28 @@
+.timer{
+    height: 400px;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    align-items: center;
+}
+.timer-reset{
+    margin-left: 10px;
+    background: orange;
+}
+.timer-button{
+    min-width: 72px;
+    outline: none;
+    border: 0;
+    padding: 10px;
+    text-transform: uppercase;
+    color: white;
+    background: #f44336;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.timer-paused{
+    background: #50c950;
+}

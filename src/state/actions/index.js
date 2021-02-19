@@ -1,4 +1,4 @@
-import {SET_PLAY, ADD_CHANNEL} from "./actionTypes";
+import {SET_PLAY, ADD_CHANNEL, SET_SEQUENCE} from "./actionTypes";
 
 let nextTodoId = 0
 export const addSong = note => ({
@@ -14,4 +14,8 @@ export const addChannel = channel => ({
 
 export const setPlay = () => ({
     type: SET_PLAY,
+})
+export const setSequence = (sequence) => ({
+    type: SET_SEQUENCE,
+    payload: sequence
 })
