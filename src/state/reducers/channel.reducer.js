@@ -9,7 +9,7 @@ export const initialState =  {
 const channelReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_CHANNEL :
-            return { ...state, channels : [{name: "Piano Rolls"}]}
+            return { ...state, channels : action.payload}
         default:
             return state
     }
