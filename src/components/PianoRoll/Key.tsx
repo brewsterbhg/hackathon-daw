@@ -1,22 +1,11 @@
-const emptyArray = [...new Array(8)];
-
-const Key = ({ note, onClick }) => {
-  const halfStep = note.includes("#");
-
+const Key = ({ note, onClick, isActive, key }) => {
   return (
     <div key={note} className="row">
-      <div className={["note", halfStep ? "half-step" : ""].join(" ")}>
-        {note}
-      </div>
-      {emptyArray.map((_, i) => {
-        return (
-          <button
-            className={["step"].join(" ")}
-            onClick={() => onClick(note)}
-            key={i}
-          />
-        );
-      })}
+      <button
+        className={["step", isActive ? "active" : ""].join(" ")}
+        onClick={() => onClick(note)}
+        key={key}
+      />
     </div>
   );
 };

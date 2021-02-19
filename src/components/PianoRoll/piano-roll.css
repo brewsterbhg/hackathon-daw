@@ -2,9 +2,18 @@
   display: flex;
 }
 
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-active {
+  background-color: #333;
+}
+
 .note {
   width: 75px;
-  height: 30px;
+  height: 19px;
   padding: 5px;
   border: 1px solid black;
   margin-top: -1px;
@@ -20,4 +29,12 @@
 
 .step {
   width: 50px;
+  height: 30px;
+  border: 1px solid #dedede;
+  background-color: #eeeeee;
+}
+
+.active {
+  background-color: #ee9c8a;
+  border: 1px solid #dedede;
 }

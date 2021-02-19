@@ -10,20 +10,11 @@ import React from "react";
 function App() {
   const stateObject = useSelector(state => state)
   console.log("test root state Object", stateObject)
-  async function startPlay() {
-    await Tone.start();
-    await Tone.Transport.start();
-
-    if (Tone.context.state !== 'running') {
-      Tone.context.resume();
-    }
-  }
 
   return (
     <div className="App">
       <header className="App-header">
-        {/*<button onClick={startPlay}>Start</button>*/}
-        <Transport onPlay={startPlay} />
+        <Transport onPlay={() => {}} />
         <PianoRoll />
       </header>
     </div>
