@@ -1,18 +1,28 @@
 .transport-button {
-  padding-left: 16px;
-  padding-right: 16px;
-  margin: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 8px;
 }
 .transport-container {
-  background: grey;
-  display: flex;
+    background: grey;
+    display: flex;
+    margin-bottom: 8px;
 }
 .transport-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.react-select {
+    /*display: flex;*/
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 9px;
+    padding-left: 10px;
+    width: 150px;
 }
 .transport-margins {
-  margin: 8px;
+    margin: 8px;
 }
