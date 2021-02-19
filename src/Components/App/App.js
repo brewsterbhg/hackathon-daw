@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
 import './App.scss';
 import Body from "../Body/Body";
-import PianoRoll from './components/PianoRoll'
-import Transport from "./components/Transport/Transport";
+import PianoRoll from '../PianoRoll'
+import Transport from "../Transport/Transport";
 
 const App = () => {
   const stateObject = useSelector(state => state)
@@ -12,8 +12,8 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         {/* <button onClick={startPlay}>Start</button> */}
-        <Body/>
         <Transport onPlay={() => {}} />
+        <Body/>
         <PianoRoll />
       </header>
     </div>
