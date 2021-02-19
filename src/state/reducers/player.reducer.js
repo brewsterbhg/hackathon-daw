@@ -1,8 +1,9 @@
 // The initial state of the App
-import {SET_PLAY, ADD_SONG} from "../actions/actionTypes";
+import { SET_PLAY, ADD_SONG, ADD_CHANNEL } from "../actions/actionTypes";
 
 export const initialState = {
-   isPlaying : false
+    isPlaying: false,
+    channels: [{name: "Piano Roll"}]
 };
 
 const playerReducer = (state = initialState, action) => {
@@ -14,6 +15,12 @@ const playerReducer = (state = initialState, action) => {
         //             note: action.payload,
         //         }
         //     ]
+        case ADD_CHANNEL:
+            const channels = state.channels.push(action.payload);
+            return {
+                ...state,
+               channels: []
+            }
         case SET_PLAY:
             return {
                 ...state,
