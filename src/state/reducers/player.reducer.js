@@ -1,8 +1,9 @@
 // The initial state of the App
-import { SET_PLAY, SET_PAUSE } from "../actions/actionTypes";
+import { SET_PLAY, SET_PAUSE, SET_STOP } from "../actions/actionTypes";
 
 export const initialState = {
     isPlaying: false,
+    isStop: false,
 };
 
 const playerReducer = (state = initialState, action) => {
@@ -16,6 +17,12 @@ const playerReducer = (state = initialState, action) => {
             return {
                 ...state,
                isPlaying: false
+            }
+        case SET_STOP:
+            return {
+                ...state,
+                isPlaying: false,
+                isStop: true,
             }
 
         default:

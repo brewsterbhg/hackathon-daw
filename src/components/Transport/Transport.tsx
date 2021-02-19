@@ -4,7 +4,7 @@ import { ReactComponent as PauseButton } from "../../assets/pause.svg";
 import { ReactComponent as StopButton } from "../../assets/stop.svg";
 import { useSelector, useDispatch } from "react-redux";
 import * as Tone from "tone";
-import { setPlay, setPause } from "../../state/actions";
+import {setPlay, setPause, setStop, setSequence} from "../../state/actions";
 import "./transport.css";
 import { Control, Reset, Timer } from "../Timer/Timer";
 
@@ -23,7 +23,7 @@ export default function Transport({
   const dispatch = useDispatch();
   const synth = new Tone.PolySynth().toDestination();
   const [currentColumn, setCurrentColumn] = useState(null);
-  const playClicked = async () => {
+  const createToneSequence = async () => {
     let music: string[][] = [];
 
     sequence.slice(1, sequence.length).forEach((column) => {
@@ -33,16 +33,10 @@ export default function Transport({
       );
       music.push(columnNotes);
     });
-
-    await Tone.start();
-
     let n = 32,
       i = 0,
       numSteps = Array(n);
     while (i < n) numSteps[i++] = i;
-
-    await Tone.start();
-
     const Sequencer = new Tone.Sequence(
       (time, column) => {
         setCurrentColumn(column);
@@ -52,22 +46,40 @@ export default function Transport({
       numSteps,
       "8n"
     );
-
-    if (isPlaying) {
+    return Sequencer;
+  };
+  const playClicked = async () => {
+    let Sequencer;
+    if(!isPlaying) {
+      Sequencer = await createToneSequence();
+      dispatch(setPlay());
+      await Tone.start();
+      await Sequencer.start();
+      await Tone.Transport.start();
+    }else {
       dispatch(setPause());
-      setCurrentColumn(null);
-
-      await Tone.Transport.stop();
+      await Tone.Transport.pause();
+      Sequencer = await createToneSequence();
       await Sequencer.stop();
-      await Sequencer.clear();
-      await Sequencer.dispose();
-
-      return;
     }
-    dispatch(setPlay());
-
-    await Sequencer.start();
-    await Tone.Transport.start();
+  };
+  const stopPlay = async() => {
+    dispatch(setStop());
+    setCurrentColumn(null);
+    const Sequencer = await createToneSequence();
+    await Tone.Transport.stop();
+    await Sequencer.stop();
+    await Sequencer.clear();
+    await Sequencer.dispose();
+    let updatedSequence = sequence.map(
+      (columns: any[], sequenceIndex: number) =>
+        columns.map((col, colIndex) => {
+          let colCopy = Object.assign({}, col);
+            colCopy.isActive = false
+          return colCopy;
+        })
+    );
+    dispatch(setSequence([...updatedSequence]));
   };
   return (
     <div className="transport-container">
@@ -78,7 +90,7 @@ export default function Transport({
           <PlayButton height={32} width={32} />
         )}
       </button>
-      <button onClick={onStop} className="transport-button">
+      <button onClick={stopPlay} className="transport-button">
         <StopButton height={32} width={32} />
       </button>
       <div className="transport-content">
