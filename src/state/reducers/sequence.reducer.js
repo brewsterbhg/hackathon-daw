@@ -4,13 +4,13 @@ import { notes } from "../../data/notes";
 
 
 
-const SEQUENCE_LENGTH = 15;
+const SEQUENCE_LENGTH = 33;
 
 export function generateBlankSequence() {
     const grid = [];
 
     for (let i = 0; i < SEQUENCE_LENGTH; i++) {
-        let column = notes.map((note) => ({ note, isActive: false }));
+        let column = notes.map((note) => ({ note, isActive: false })).reverse();
         grid.push(column);
     }
 

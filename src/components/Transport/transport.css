@@ -1,5 +1,6 @@
 .transport-button {
-  display: inline-flex;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 8px;
 }
 .transport-container {

@@ -1,3 +1,9 @@
+.piano-roll {
+  max-height: 500px;
+  max-width: 100vw;
+  overflow: scroll;
+}
+
 .row {
   display: flex;
 }
