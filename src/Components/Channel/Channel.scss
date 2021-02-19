@@ -1,0 +1,22 @@
+.channel {
+  width: 905%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  .channel__controls {
+    width: 30%;
+    height: auto;
+    text-align: left;
+  }
+
+  .channel__track {
+    width: 65%;
+    height: auto;
+    background-color: white;
+    border: 1px solid black;
+  }
+}

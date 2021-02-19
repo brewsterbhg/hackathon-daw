@@ -1,12 +1,15 @@
 import "./Body.scss";
+import Channel from "../Channel/Channel";
 
 const Body =() => {
+    const addChannel = () =>{
+
+    }
+
   return (
     <div className="body">
-        <div className="body__controls">
-            <p>Piano Roll</p>
-        </div>
-        <div className="body__channels"></div>
+        <button className="button" onClick={()=>{addChannel()}}>+</button>
+        <Channel/>
     </div>
   );
 }

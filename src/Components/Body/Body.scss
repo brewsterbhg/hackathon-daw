@@ -1,21 +1,16 @@
-.body{
-    width: 100vw;
-    height: 50vh;
-    background-color: grey;
-    padding: 1em;
-    display: flex;
-    flex-direction: row;
-    color: white;
+.body {
+  width: 100vw;
+  height: 50vh;
+  background-color: silver;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
 
-    .body__controls{
-        width: 30%;
-        height: auto
-    }
-
-    .body__channels{
-        width: 65%;
-        height: auto;
-        background-color: white;
-        border: 1px solid black;
-    }
+.button {
+  width: 5vw;
+  padding: 1em;
+  margin: 1em;
+  font-weight: bold;
 }
