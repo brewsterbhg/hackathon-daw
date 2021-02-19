@@ -13,7 +13,7 @@ const App = () => {
       <header className="App-header">
         {/* <button onClick={startPlay}>Start</button> */}
         <Transport onPlay={() => {}} />
-        <Body/>
+        {/*<Body/>*/}
         <PianoRoll />
       </header>
     </div>
