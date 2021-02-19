@@ -15,6 +15,7 @@ export const addChannel = channel => ({
 export const setPlay = () => ({
     type: SET_PLAY,
 })
+
 export const setSequence = (sequence) => ({
     type: SET_SEQUENCE,
     payload: sequence

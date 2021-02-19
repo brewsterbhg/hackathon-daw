@@ -86,7 +86,7 @@ const PianoRoll = () => {
 
     return (
         <>
-            <button onClick={playClicked}>{!isPlaying ? "Play" : "Stop"}</button>
+             {/* <button onClick={playClicked}>{!isPlaying ? "Play" : "Stop"}</button> */}
             <div className="row">
                 {sequence.map((column, columnIndex) => {
                     return (

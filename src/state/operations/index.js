@@ -1,4 +1,4 @@
-import {setPlay} from '../actions';
+import {setPlay, addChannel} from '../actions';
 
 
 
@@ -10,6 +10,12 @@ const asyncPlayBackDummy = () => async dispatch => {
 
 };
 
+const appendChannel = () => async dispatch => {
+    dispatch(addChannel())
+};
+
+
+
 
 const setIsPlaying = () => async dispatch => {
     dispatch(setIsPlaying())
@@ -19,5 +25,6 @@ const setIsPlaying = () => async dispatch => {
 
 export {
     asyncPlayBackDummy,
-    setIsPlaying
+    setIsPlaying,
+    appendChannel
 };
